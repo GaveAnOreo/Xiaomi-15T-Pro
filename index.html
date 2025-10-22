@@ -1,497 +1,956 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Xiaomi 15T Pro — Official Showcase (Demo)</title>
-    <meta name="description" content="Xiaomi 15T Pro — flagship-level performance and pro-grade imaging. Demo product page built with Bootstrap.">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-    <style>
-      :root{
-        --brand:#ff3b30;
-        --brand-soft:rgba(255, 59, 48, 0.12);
-        --muted:#6c757d;
-        --body:#f2f4f8;
-        --card:#ffffff;
-      }
-      body{
-        font-family:'Public Sans','Inter',system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial;
-        background:var(--body);
-        color:#0f172a;
-        font-size:16px; /* sensible base for readability */
-        line-height:1.62; /* comfortable reading measure */
-        -webkit-font-smoothing:antialiased;
-        -moz-osx-font-smoothing:grayscale;
-      }
-      main{position:relative; z-index:1;}
-      .navbar-brand img{height:28px}
-      .hero{position:relative; overflow:hidden; background:linear-gradient(160deg, rgba(15,23,42,0.96) 0%, rgba(15,23,42,0.85) 55%, rgba(15,23,42,0.75) 100%); color:#fff;}
-      .hero::before{
-        content:"";
-        position:absolute;
-        inset:-40% 40% auto -25%;
-        width:520px;
-        height:520px;
-        background:radial-gradient(circle at center, rgba(255,255,255,0.14) 0%, transparent 65%);
-        opacity:.65;
-        pointer-events:none;
-      }
-      .hero::after{
-        content:"";
-        position:absolute;
-        bottom:-180px;
-        right:-120px;
-        width:460px;
-        height:460px;
-        background:radial-gradient(circle at center, rgba(255,255,255,0.18) 0%, transparent 70%);
-        opacity:.6;
-        pointer-events:none;
-      }
-      .hero .lead{color:rgba(255,255,255,0.92)}
-  .hero-content{position:relative; width:100%; background:linear-gradient(155deg, rgba(15,23,42,0.92) 0%, rgba(24,34,62,0.82) 100%); border-radius:28px; padding:2.5rem 2rem; box-shadow:0 30px 80px rgba(4,11,27,0.32); backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,0.08)}
-  @media(min-width:992px){ .hero-content{padding:3rem 3.5rem; max-width:560px} }
-  .hero-content h1,.hero-content .lead{color:#fff}
-  .hero-content h1{font-size:2.4rem; line-height:1.08; text-shadow:0 6px 18px rgba(2,6,23,0.45)}
-  .hero-content .lead{font-size:1.06rem; color:rgba(255,255,255,0.92)}
-  .hero-content .btn-outline-light{border-color:rgba(255,255,255,0.85); color:#fff}
-  .hero-content .btn-outline-light:hover{background:#fff; color:#0f172a}
-  .hero-content .btn:focus{outline:none; box-shadow:0 0 0 0.35rem rgba(255,59,48,0.16)}
-      .product-phone{border-radius:28px; overflow:hidden; box-shadow:0 48px 96px rgba(2,6,23,0.16); transform-origin:center; backdrop-filter:blur(4px)}
-  .features-list{color:rgba(255,255,255,0.85)}
-  .features-list li{margin-bottom:.65rem}
-      .features-list i{font-size:1.15rem}
-      .badge-ghost{background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.95); border-radius:999px; padding:.25rem .75rem; letter-spacing:.08em; font-size:.75rem; text-transform:uppercase}
-      .muted-small{color:var(--muted)}
-      .fade-in{animation:fadeIn .6s ease both}
-      @keyframes fadeIn{from{opacity:0; transform:translateY(8px)} to{opacity:1; transform:none}}
-  .section{padding:4.5rem 0}
-      .section-alt{padding:4.5rem 0; background:#ffffff; border-radius:28px; box-shadow:0 24px 60px rgba(15,23,42,0.05)}
-  .section p, .accordion-body p, .card-text{font-size:0.98rem; line-height:1.6; color:#334155}
-  .section .container{max-width:1100px}
-      .section-heading{text-align:center; margin-bottom:3rem}
-      .section-heading .eyebrow{display:inline-block; text-transform:uppercase; letter-spacing:.25rem; font-size:.72rem; font-weight:600; color:var(--brand)}
-      .section-heading h2{font-weight:700; margin-top:.75rem}
-      .accent-line{width:56px; height:3px; margin:1rem auto 0; background:var(--brand); border-radius:999px}
-  .spec-card{border-radius:18px; border:none; background:linear-gradient(160deg,#ffffff 0%,#f4f6fb 100%); transition:transform .22s ease, box-shadow .22s ease}
-      .spec-card:hover{transform:translateY(-8px); box-shadow:0 24px 50px rgba(15,23,42,0.12)}
-  .spec-card h5{font-size:1.05rem; margin-bottom:.6rem}
-      .icon-circle{width:52px; height:52px; border-radius:18px; display:flex; align-items:center; justify-content:center; background:linear-gradient(135deg, rgba(255,59,48,0.95), rgba(255,116,97,0.8)); color:#fff; font-size:1.25rem; margin-bottom:1rem}
-      .stat-card{background:rgba(255,255,255,0.12); border:1px solid rgba(255,255,255,0.18); border-radius:18px; padding:1.75rem; backdrop-filter:blur(8px);}
-      .stat-card h4{font-weight:700; margin-bottom:.25rem; color:#fff}
-      .stat-card span{font-size:.78rem; letter-spacing:.12em; text-transform:uppercase; color:rgba(255,255,255,0.6)}
-      .stat-card p{margin:0; color:rgba(255,255,255,0.8)}
-      .accordion-button::after{filter:brightness(0.25)}
-      .accordion-button{font-weight:600}
-      .accordion-item{border:1px solid #e5e8ef; border-radius:16px; overflow:hidden; margin-bottom:1rem}
-      .accordion-item:last-of-type{margin-bottom:0}
-      .accordion-body{background:#f9fbff}
-      .tag-cloud{display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem}
-    .tag{padding:.35rem .75rem; border-radius:999px; background:var(--brand-soft); color:var(--brand); font-size:.75rem; font-weight:600}
-      .gallery figure{position:relative; border-radius:22px; overflow:hidden; background:#ffffff; box-shadow:0 24px 50px rgba(15,23,42,0.08); margin:0}
-    .gallery img{cursor:pointer; transition:transform .25s ease, filter .25s ease; display:block}
-    .gallery figure:hover img{transform:scale(1.05); filter:brightness(.9)}
-    .gallery img:focus{outline:none; box-shadow:0 0 0 0.28rem rgba(34,197,94,0.12)}
-    .gallery figure:focus-within{box-shadow:0 20px 40px rgba(15,23,42,0.08)}
-    .gallery-caption{position:absolute; inset:auto 0 0 0; padding:1rem 1.25rem; background:linear-gradient(180deg, rgba(15,23,42,0) 0%, rgba(15,23,42,0.55) 100%); color:#fff; font-size:.85rem; letter-spacing:.05em; text-transform:uppercase}
-  footer{background:#0f172a; color:rgba(255,255,255,0.78)}
-      footer small{color:inherit}
-      @media(min-width:992px){ .hero {padding:6.5rem 0 5.5rem} }
-      @media(max-width:767px){
-        .section{padding:3rem 0}
-        .section-alt{padding:3rem 1.5rem}
-      }
-    </style>
-  </head>
-  <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent py-3">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Xiaomi_logo.svg" alt="Xiaomi logo">
-          <span class="ms-2 fw-semibold">Xiaomi</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="nav">
-          <ul class="navbar-nav ms-auto align-items-lg-center">
-            <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
-            <li class="nav-item"><a class="nav-link" href="#specs">Specs</a></li>
-            <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
-            <li class="nav-item ms-3 d-none d-lg-flex align-items-center">
-              <span class="text-muted small">Share</span>
-              <a class="btn btn-link text-white ms-2" href="#" aria-label="share"><i class="bi bi-share-fill"></i></a>
-            </li>
-          </ul>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Xiaomi 15T Pro — Flagship Showcase</title>
+  <meta name="description"
+    content="Discover Xiaomi 15T Pro with Leica Summilux optics, 144Hz AMOLED, HyperCharge battery, and HyperOS 2 intelligence.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Public+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root {
+      --brand: #ff552e;
+      --brand-dark: #e5391c;
+      --ink: #0f172a;
+      --muted: #64748b;
+      --soft-bg: #f4f6fb;
+      --deep-blue: #070b1f;
+      --deep-blue-alt: #141c3a;
+      --glass: rgba(255, 255, 255, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Public Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      font-size: 16px;
+      line-height: 1.75;
+      color: var(--ink);
+      background: #eff2f9;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .navbar {
+      backdrop-filter: blur(14px);
+      background: rgba(5, 10, 24, 0.75);
+    }
+
+    .navbar .nav-link {
+      color: rgba(255, 255, 255, 0.78);
+      font-weight: 500;
+    }
+
+    .navbar .nav-link:hover,
+    .navbar .nav-link:focus {
+      color: #fff;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+      background:
+        radial-gradient(140% 100% at 15% -10%, rgba(255, 94, 58, 0.28) 0%, rgba(18, 26, 63, 0.1) 40%, rgba(11, 16, 38, 0) 60%),
+        linear-gradient(135deg, rgba(8, 12, 30, 0.95) 0%, rgba(15, 22, 52, 0.92) 45%, rgba(20, 32, 72, 0.88) 100%),
+        url('https://i02.appmifile.com/mi-com-product/fly-birds/xiaomi-15t-pro/pc/pc6_leica_bg.jpg') center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -180px -220px auto;
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.18) 0%, transparent 70%);
+      opacity: 0.6;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      background: linear-gradient(150deg, rgba(14, 21, 48, 0.94) 0%, rgba(23, 36, 80, 0.82) 100%);
+      border-radius: 32px;
+      padding: 3rem 3.2rem;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 40px 80px rgba(2, 6, 23, 0.45);
+    }
+
+    .badge-ghost {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.12);
+      letter-spacing: 0.16em;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+    }
+
+    .cta-btn {
+      border-radius: 999px;
+      padding: 0.85rem 1.8rem;
+      font-weight: 600;
+    }
+
+    .cta-btn.btn-primary {
+      background: var(--brand);
+      border-color: var(--brand);
+    }
+
+    .cta-btn.btn-primary:hover,
+    .cta-btn.btn-primary:focus {
+      background: var(--brand-dark);
+      border-color: var(--brand-dark);
+    }
+
+    .cta-btn.btn-outline-light {
+      border-color: rgba(255, 255, 255, 0.6);
+      color: #fff;
+    }
+
+    .cta-btn.btn-outline-light:hover,
+    .cta-btn.btn-outline-light:focus {
+      background: #fff;
+      color: #0f172a;
+    }
+
+    .stat-pill {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1.75rem;
+      border-radius: 22px;
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      background: rgba(255, 255, 255, 0.12);
+      color: #fff;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 22px 46px rgba(3, 8, 24, 0.25);
+      height: 100%;
+    }
+
+    .stat-pill span {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .stat-pill p {
+      color: rgba(255, 255, 255, 0.84);
+    }
+
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 3rem auto;
+    }
+
+    .section-heading .eyebrow {
+      display: inline-block;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--brand);
+    }
+
+    .hero .lead {
+      color: rgba(237, 242, 255, 0.92);
+    }
+
+    .hero .small {
+      color: rgba(240, 244, 255, 0.75);
+    }
+
+    .hero .checklist li {
+      color: rgba(240, 244, 255, 0.92);
+    }
+
+    .hero .check-icon {
+      background: rgba(255, 255, 255, 0.24);
+      color: #fff;
+      box-shadow: 0 12px 22px rgba(0, 0, 0, 0.25);
+    }
+
+    .section-heading h2 {
+      font-weight: 700;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .section-heading p {
+      color: #475569;
+    }
+
+    .section-lead {
+      color: #475569;
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .highlight-card {
+      border-radius: 26px;
+      padding: 2.4rem 2rem;
+      background: linear-gradient(150deg, #ffffff 0%, #f0f4ff 45%, #e9f1ff 100%);
+      border: 1px solid rgba(14, 24, 52, 0.08);
+      box-shadow: 0 24px 50px rgba(15, 23, 42, 0.08);
+      height: 100%;
+    }
+
+    .highlight-card small {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--brand-dark);
+      font-weight: 600;
+    }
+
+    .highlight-card p {
+      color: #334155;
+    }
+
+    .feature-grid {
+      display: grid;
+      gap: 1.4rem;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+
+    .feature-item {
+      border-radius: 20px;
+      padding: 1.8rem;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.92) 0%, rgba(244, 248, 255, 0.92) 100%);
+      border: 1px solid rgba(99, 110, 135, 0.12);
+      box-shadow: 0 18px 32px rgba(15, 23, 42, 0.08);
+    }
+
+    .feature-item p {
+      color: #3c4a62;
+    }
+
+    .feature-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin: 0;
+    }
+
+    .feature-tags span {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      background: rgba(255, 85, 46, 0.15);
+      color: var(--brand-dark);
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .section-dark {
+      position: relative;
+      border-radius: 36px;
+      padding: 4.5rem 3.2rem;
+      background: linear-gradient(135deg, var(--deep-blue) 0%, var(--deep-blue-alt) 90%);
+      color: #f1f5ff;
+      box-shadow: 0 30px 70px rgba(4, 9, 26, 0.45);
+      overflow: hidden;
+    }
+
+    .section-dark .section-heading p {
+      color: rgba(222, 230, 255, 0.78);
+    }
+
+    .section-dark .feature-item {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.15);
+      color: #fff;
+      box-shadow: none;
+    }
+
+    .section-dark .section-lead,
+    .section-dark p,
+    .section-dark .feature-item p,
+    .section-dark .stat-card p,
+    .section-dark .stat-card span {
+      color: rgba(233, 239, 255, 0.88);
+    }
+
+    .section-dark .feature-tags span {
+      background: rgba(255, 255, 255, 0.14);
+      color: #fff;
+    }
+
+    .split-figure {
+      border-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 28px 60px rgba(9, 13, 36, 0.35);
+    }
+
+    .checklist {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .checklist li {
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      margin-bottom: 0.65rem;
+      color: rgba(15, 23, 42, 0.85);
+    }
+
+    .checklist-dark li {
+      color: rgba(238, 244, 255, 0.9);
+    }
+
+    .check-icon {
+      flex: 0 0 auto;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255, 102, 63, 0.16);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--brand-dark);
+      font-size: 0.9rem;
+    }
+
+    .section-dark .check-icon {
+      background: rgba(255, 255, 255, 0.18);
+      color: #fff;
+    }
+
+    .stat-grid {
+      display: grid;
+      gap: 1.2rem;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .stat-card {
+      border-radius: 18px;
+      padding: 1.5rem;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      color: #fff;
+      backdrop-filter: blur(8px);
+    }
+
+    .specs-section {
+      border-radius: 36px;
+      background: #fff;
+      box-shadow: 0 28px 70px rgba(15, 23, 42, 0.12);
+      padding: 4.5rem 3.25rem;
+    }
+
+    .accordion-item {
+      border: 1px solid rgba(100, 116, 139, 0.16);
+      border-radius: 18px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    }
+
+    .accordion-button {
+      font-weight: 600;
+    }
+
+    .accordion-button:not(.collapsed) {
+      background: rgba(255, 102, 63, 0.1);
+      color: var(--brand-dark);
+    }
+
+    .cta-section {
+      border-radius: 34px;
+      padding: 3.2rem 3rem;
+      background: linear-gradient(135deg, rgba(7, 11, 31, 0.95) 0%, rgba(18, 31, 70, 0.88) 100%);
+      color: #fff;
+      box-shadow: 0 30px 70px rgba(6, 12, 40, 0.45);
+    }
+
+    .cta-section .section-lead {
+      color: rgba(236, 240, 255, 0.88);
+    }
+
+    footer {
+      background: #050916;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    footer small {
+      color: inherit;
+    }
+
+    @media (max-width: 991px) {
+      .hero {
+        padding: 5.5rem 0 4.5rem;
+      }
+
+      .hero-content {
+        padding: 2.4rem 2.3rem;
+      }
+
+      .section-dark {
+        padding: 3.5rem 2rem;
+      }
+
+      .specs-section {
+        padding: 3.2rem 2rem;
+      }
+    }
+
+    @media (max-width: 575px) {
+      .section {
+        padding: 3.5rem 0;
+      }
+
+      .cta-section {
+        padding: 2.6rem 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="#hero">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Xiaomi_logo.svg" alt="Xiaomi logo" height="28">
+        <span class="ms-2 fw-semibold">Xiaomi</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="nav">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#highlights">Highlights</a></li>
+          <li class="nav-item"><a class="nav-link" href="#camera">Camera</a></li>
+          <li class="nav-item"><a class="nav-link" href="#display">Display</a></li>
+          <li class="nav-item"><a class="nav-link" href="#performance">Performance</a></li>
+          <li class="nav-item"><a class="nav-link" href="#specs">Specs</a></li>
+          <li class="nav-item"><a class="nav-link" href="#cta">Get Yours</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <header id="hero" class="hero py-5">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <div class="hero-content">
+            <span class="badge-ghost mb-4">New Flagship</span>
+            <h1 class="fw-bold mb-3">Xiaomi 15T Pro</h1>
+            <p class="lead mb-4">Leica Summilux precision, 144Hz AMOLED brilliance, Dimensity 9400+ performance, and
+              HyperCharge endurance wrapped in a refined flagship design.</p>
+            <div class="d-flex flex-wrap gap-3">
+              <a class="btn btn-primary cta-btn" href="#specs">Explore full specs</a>
+              <a class="btn btn-outline-light cta-btn" href="#cta">Book a demo</a>
+            </div>
+            <ul class="checklist mt-4 mb-0">
+              <li><span class="check-icon"><i class="bi bi-check2"></i></span><span>6.83" 144Hz AMOLED with 3200 nit
+                  peak brightness and Dolby Vision</span></li>
+              <li><span class="check-icon"><i class="bi bi-check2"></i></span><span>Leica co-engineered triple camera
+                  with 100× Surge zoom</span></li>
+              <li><span class="check-icon"><i class="bi bi-check2"></i></span><span>5500mAh Surge battery with 90W wired
+                  / 50W wireless HyperCharge</span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <div class="mx-auto" style="max-width: 460px;">
+            <div class="product-phone position-relative border rounded-5 p-3"
+              style="background: linear-gradient(180deg, rgba(255,255,255,0.24) 0%, rgba(255,255,255,0.08) 100%); border: 1px solid rgba(255,255,255,0.24); box-shadow: 0 50px 100px rgba(5, 10, 30, 0.35);">
+              <img class="img-fluid rounded-4"
+                src="https://i02.appmifile.com/mi-com-product/fly-birds/xiaomi-15t-pro/pc/43ae224614d1cd4bd3d99d187ef0feca.jpg?f=webp"
+                alt="Xiaomi 15T Pro hero render" loading="lazy">
+            </div>
+            <p class="small mt-3">Finishes: Obsidian Black · Glacier Silver ·
+              Ocean Blue · Titan Gold</p>
+          </div>
         </div>
       </div>
-    </nav>
+      <div class="row row-cols-1 row-cols-md-3 g-3 mt-5">
+        <div class="col">
+          <div class="stat-pill">
+            <span>Performance</span>
+            <strong class="fs-4">Dimensity 9400+</strong>
+            <p class="mb-0">3nm flagship SoC with dedicated NPU 890 engine</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="stat-pill">
+            <span>Display</span>
+            <strong class="fs-4">144Hz AMOLED</strong>
+            <p class="mb-0">6.83" flat panel · 3200 nit peak brightness</p>
+          </div>
+        </div>
+        <div class="col">
+          <div class="stat-pill">
+            <span>Charging</span>
+            <strong class="fs-4">90W + 50W</strong>
+            <p class="mb-0">HyperCharge wired and wireless fast power</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-    <header class="hero py-5">
+  <main>
+    <section id="highlights" class="section">
+      <div class="container">
+        <div class="section-heading text-center">
+          <span class="eyebrow">Highlights</span>
+          <h2>Lead every moment with flagship hardware</h2>
+          <p class="section-lead mx-auto">Leica optics, HyperOS intelligence, and world-class engineering combine to
+            deliver a polished experience from capture to creation.</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="highlight-card">
+              <small>Performance</small>
+              <h3 class="mt-2">Dimensity 9400+</h3>
+              <p class="mb-0">3nm octa-core platform with Immortalis-G925 graphics, LPDDR5X memory, and UFS 4.1 storage
+                for sustained flagship power.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="highlight-card">
+              <small>Leica Optics</small>
+              <h3 class="mt-2">Summilux System</h3>
+              <p class="mb-0">50MP Light Fusion main sensor, Leica 115mm telephoto, and master-lens presets tuned for
+                cinematic storytelling.</p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="highlight-card">
+              <small>Power</small>
+              <h3 class="mt-2">HyperCharge 90W</h3>
+              <p class="mb-0">Smart Surge battery learns your routine, delivering blistering wired and wireless charging
+                with optimized longevity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="camera" class="section">
       <div class="container">
         <div class="row align-items-center gy-4">
-          <div class="col-lg-6 text-center text-lg-start">
-            <div class="hero-content mx-auto text-center text-lg-start">
-              <p class="badge-ghost mb-3 d-inline-block">New · Flagship</p>
-              <h1 class="display-4 fw-bold mb-3">Xiaomi 15T Pro</h1>
-              <p class="lead">Pro-level photography. Desktop-class performance. All-day battery with ultra-fast charging.</p>
-
-              <div class="d-flex gap-3 mt-4 justify-content-center justify-content-lg-start">
-                <a class="btn btn-outline-light btn-lg" href="#specs">See full specs</a>
-              </div>
-
-              <ul class="list-unstyled mt-4 features-list text-start">
-                <li class="d-flex align-items-center"><i class="bi bi-check2-circle me-2 text-success"></i> 6.83" 144Hz AMOLED — silky smooth</li>
-                <li class="d-flex align-items-center"><i class="bi bi-check2-circle me-2 text-success"></i> Leica co-engineered camera system</li>
-                <li class="d-flex align-items-center"><i class="bi bi-check2-circle me-2 text-success"></i> 5500mAh battery with HyperCharge</li>
-              </ul>
-            </div>
+          <div class="col-lg-6">
+            <figure class="split-figure mb-0">
+              <img class="img-fluid"
+                src="https://i02.appmifile.com/mi-com-product/fly-birds/xiaomi-15t-pro/pc/pc3_leica_0911.jpg?f=webp"
+                alt="Leica Summilux camera on Xiaomi 15T Pro" loading="lazy">
+            </figure>
           </div>
-
-          <div class="col-lg-6 text-center">
-            <div class="product-phone bg-white p-3 fade-in">
-              <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5a9b9c6c3a2d6f0b0c6f6b8f7c5b3c1d" alt="Xiaomi 15T Pro front and back view" class="img-fluid" loading="lazy">
-            </div>
-            <div class="mt-3 small" style="color:rgba(15,23,42,0.6)">Available in Obsidian Black, Glacier Silver, Ocean Blue</div>
-          </div>
-        </div>
-        <div class="row row-cols-1 row-cols-md-3 g-3 mt-5">
-          <div class="col">
-            <div class="stat-card">
-              <span>Performance</span>
-              <h4>Dimensity 9400+</h4>
-              <p>3nm flagship platform with NPU 890</p>
-            </div>
-          </div>
-          <div class="col">
-            <div class="stat-card">
-              <span>Display</span>
-              <h4>6.83" 144Hz</h4>
-              <p>AMOLED, 3200 nits peak brightness</p>
-            </div>
-          </div>
-          <div class="col">
-            <div class="stat-card">
-              <span>Charging</span>
-              <h4>90W + 50W</h4>
-              <p>HyperCharge wired & wireless</p>
-            </div>
+          <div class="col-lg-6 ps-lg-5">
+            <span class="eyebrow">Leica Summilux optics</span>
+            <h2 class="fw-bold mb-3">Capture pro-grade shots with Leica tuned hardware</h2>
+            <p class="section-lead mb-4">Light Fusion sensors, Leica color science, and cinematic presets unlock rich
+              detail in every scenario, from ultra-wide vistas to 100× zoom.</p>
+            <ul class="checklist mb-0">
+              <li><span class="check-icon"><i class="bi bi-check2"></i></span><span>50MP Light Fusion 900 main sensor ·
+                  f/1.62 aperture · dual OIS for steady capture</span></li>
+              <li><span class="check-icon"><i class="bi bi-check2"></i></span><span>50MP 115mm super telephoto with
+                  Surge zoom and telemacro versatility</span></li>
+              <li><span class="check-icon"><i class="bi bi-check2"></i></span><span>12MP 15mm ultra-wide lens for
+                  expansive perspectives and macro focus</span></li>
+              <li><span class="check-icon"><i class="bi bi-check2"></i></span><span>Leica styles, Master-lens system,
+                  cinematic LUT support, and Pro controls</span></li>
+              <li><span class="check-icon"><i class="bi bi-check2"></i></span><span>8K30 and 4K120 HDR10+ video with
+                  Dolby Vision playback and director mode</span></li>
+            </ul>
           </div>
         </div>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <section id="features" class="section">
-        <div class="container">
-          <div class="section-heading">
-            <span class="eyebrow">Experience</span>
-            <h2>Engineered to lead in every category</h2>
-            <div class="accent-line"></div>
-          </div>
-          <div class="row g-4">
-            <div class="col-lg-4">
-              <div class="card p-4 h-100 spec-card">
-                <div class="icon-circle"><i class="bi bi-cpu"></i></div>
-                <h5 class="card-title">Flagship Performance</h5>
-                <p class="card-text text-muted">Dimensity 9400+ with dedicated NPU 890 gives you uncompromised gaming, AI tools, and multi-tasking.</p>
-                <div class="tag-cloud">
-                  <span class="tag">LPDDR5X</span>
-                  <span class="tag">UFS 4.1</span>
-                </div>
+    <section id="display" class="section">
+      <div class="container section-dark">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-6">
+            <span class="eyebrow">Immersive display</span>
+            <h2 class="fw-bold mb-3">6.83" 144Hz AMOLED with 3200 nit peak brightness</h2>
+            <p class="section-lead mb-4">Adaptive refresh, Pro HDR tuning, and TÜV Rheinland certifications keep visuals
+              smooth and eyes comfortable through long sessions.</p>
+            <div class="feature-grid">
+              <div class="feature-item">
+                <h4>Adaptive 144Hz</h4>
+                <p>Game Turbo boosts touch sampling to 2560Hz for instant responsiveness.</p>
               </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="card p-4 h-100 spec-card">
-                <div class="icon-circle"><i class="bi bi-camera-fill"></i></div>
-                <h5 class="card-title">Leica Optics</h5>
-                <p class="card-text text-muted">Co-engineered with Leica for precise color science, cinematic modes, and up to 100× digital zoom.</p>
-                <div class="tag-cloud">
-                  <span class="tag">50MP Main</span>
-                  <span class="tag">115mm Tele</span>
-                  <span class="tag">Ultra-wide</span>
-                </div>
+              <div class="feature-item">
+                <h4>Dolby Vision®</h4>
+                <p>68 billion colors with HDR10+ and Dolby Vision playback for cinematic contrast.</p>
               </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="card p-4 h-100 spec-card">
-                <div class="icon-circle"><i class="bi bi-battery-charging"></i></div>
-                <h5 class="card-title">Intelligent Power</h5>
-                <p class="card-text text-muted">Surge battery management learns your usage to balance longevity with record-setting charge speeds.</p>
-                <div class="tag-cloud">
-                  <span class="tag">90W Wired</span>
-                  <span class="tag">50W Wireless</span>
-                </div>
+              <div class="feature-item">
+                <h4>Gorilla Glass 7i</h4>
+                <p>Flat panel with subtle chamfer and wet touch support for confident daily use.</p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section id="specs" class="section section-alt">
-        <div class="container">
-          <div class="section-heading">
-            <span class="eyebrow">Specifications</span>
-            <h2>A flagship spec sheet without compromises</h2>
-            <p class="text-muted mt-3">Every component is selected to support creators and power users with reliable performance, imaging, and endurance.</p>
-            <div class="accent-line"></div>
-          </div>
-
-          <div class="accordion" id="specAccordion">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="specOneHeading">
-                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#specOne" aria-expanded="true" aria-controls="specOne">
-                  Performance & Storage
-                </button>
-              </h2>
-              <div id="specOne" class="accordion-collapse collapse show" aria-labelledby="specOneHeading" data-bs-parent="#specAccordion">
-                <div class="accordion-body">
-                  <p class="mb-2"><strong>Memory options:</strong> 12 GB + 256 GB · 12 GB + 512 GB</p>
-                  <p class="mb-2">RAM: LPDDR5X · Storage: UFS 4.1<br><small class="text-muted">*Available storage and RAM are less than the total memory due to the operating system and pre-installed software.</small></p>
-                  <p class="mb-2"><strong>SoC:</strong> MediaTek Dimensity 9400+ (3nm)</p>
-                  <ul class="text-muted small mb-2">
-                    <li>CPU: 1× Cortex-X9 @ 3.73GHz, 3× Cortex-X4 @ 3.3GHz, 4× Cortex-A720 @ 2.4GHz</li>
-                    <li>GPU: Immortalis-G925 MC12</li>
-                    <li>NPU: 890 neural processing unit</li>
-                  </ul>
-                  <p class="mb-0"><strong>Cooling:</strong> Xiaomi 3D IceLoop System maintains performance under sustained loads.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="specTwoHeading">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#specTwo" aria-expanded="false" aria-controls="specTwo">
-                  Dimensions & Display
-                </button>
-              </h2>
-              <div id="specTwo" class="accordion-collapse collapse" aria-labelledby="specTwoHeading" data-bs-parent="#specAccordion">
-                <div class="accordion-body">
-                  <div class="row">
-                    <div class="col-md-6">
-                      <p class="mb-2"><strong>Dimensions:</strong></p>
-                      <ul class="text-muted small">
-                        <li>Height: 162.7 mm</li>
-                        <li>Width: 77.9 mm</li>
-                        <li>Thickness: 7.96 mm</li>
-                        <li>Weight: 210 g<br><small class="text-muted">*Tested by Xiaomi Internal Labs; actual results may vary.</small></li>
-                      </ul>
-                    </div>
-                    <div class="col-md-6">
-                      <p class="mb-2"><strong>Display:</strong> 6.83" flat AMOLED · 2772 × 1280 · 447 ppi</p>
-                      <ul class="text-muted small">
-                        <li>Refresh rate up to 144Hz; touch sampling 480Hz; instantaneous 2560Hz (Game Turbo)</li>
-                        <li>Peak brightness: 3200 nits (25% APL)</li>
-                        <li>Corning® Gorilla® Glass 7i, AMOLED with DCI-P3 gamut, 68 billion colors</li>
-                        <li>Supports HDR10+, Dolby Vision®, Original color PRO, Pro HDR, Wet touch</li>
-                        <li>TÜV Rheinland Low Blue Light (HW), Flicker Free, Circadian Friendly certified</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="specThreeHeading">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#specThree" aria-expanded="false" aria-controls="specThree">
-                  Imaging System
-                </button>
-              </h2>
-              <div id="specThree" class="accordion-collapse collapse" aria-labelledby="specThreeHeading" data-bs-parent="#specAccordion">
-                <div class="accordion-body">
-                  <p class="mb-2"><strong>Rear cameras</strong> · Leica Summilux optics (VARIO-SUMMILUX 1:1.62-3.0/15-115 ASPH.)</p>
-                  <ul class="text-muted small">
-                    <li>Leica 23mm main: 50MP Light Fusion 900 sensor, 2.4μm 4-in-1 Super Pixel, f/1.62, OIS</li>
-                    <li>Leica 115mm super telephoto: 50MP, f/3.0, OIS, up to 100× digital zoom</li>
-                    <li>Leica 15mm ultra-wide: 12MP, f/2.2, 120° FOV</li>
-                    <li>Master-lens system (23mm/35mm/46mm/75mm/115mm), Leica styles, filters, watermark</li>
-                    <li>Video: 8K30, 4K120/60/30, 1080p and 720p slow motion up to 960fps, HDR10+, LUT support</li>
-                  </ul>
-                  <p class="mb-2"><strong>Front camera</strong> · 32MP in-display (0.64μm pixels, 1.28μm 4-in-1, f/2.2, 21mm equiv.)</p>
-                  <ul class="text-muted small mb-0">
-                    <li>Photo: HDR, Portrait, Palm/Voice shutter, Timed burst, Screen fill light</li>
-                    <li>Video: 4K30, 1080p60/30, 720p30, HDR10+, time-lapse, slow-motion selfie</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="specFourHeading">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#specFour" aria-expanded="false" aria-controls="specFour">
-                  Battery & Charging
-                </button>
-              </h2>
-              <div id="specFour" class="accordion-collapse collapse" aria-labelledby="specFourHeading" data-bs-parent="#specAccordion">
-                <div class="accordion-body">
-                  <p class="mb-2"><strong>Battery:</strong> 5500mAh (typ) Xiaomi Surge battery with intelligent power management.</p>
-                  <ul class="text-muted small mb-0">
-                    <li>90W HyperCharge wired (Xiaomi 90W adapter or above recommended)</li>
-                    <li>50W wireless HyperCharge (wireless charger sold separately)</li>
-                    <li>USB-C port supporting PD3.0 / PD2.0</li>
-                    <li><small>*USB-C port designed for digital devices only; using non-digital accessories may cause incompatibility.</small></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="specFiveHeading">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#specFive" aria-expanded="false" aria-controls="specFive">
-                  Intelligence & Software
-                </button>
-              </h2>
-              <div id="specFive" class="accordion-collapse collapse" aria-labelledby="specFiveHeading" data-bs-parent="#specAccordion">
-                <div class="accordion-body">
-                  <p class="mb-2"><strong>Xiaomi HyperAI suite:</strong> AI Writing, AI Speech Recognition, AI Interpreter, AI Search, AI Dynamic Wallpapers, AI Creativity Assistant.</p>
-                  <p class="mb-2">Circle to Search with Google · Google Gemini integration.<br><small class="text-muted">*Availability varies by region and language. Internet connection required; check responses for accuracy.</small></p>
-                  <p class="mb-0"><strong>Operating system:</strong> Xiaomi HyperOS 2.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="specSixHeading">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#specSix" aria-expanded="false" aria-controls="specSix">
-                  Connectivity & Positioning
-                </button>
-              </h2>
-              <div id="specSix" class="accordion-collapse collapse" aria-labelledby="specSixHeading" data-bs-parent="#specAccordion">
-                <div class="accordion-body">
-                  <p class="mb-2"><strong>SIM:</strong> Dual SIM (nano SIM + nano SIM / nano SIM + eSIM / eSIM + eSIM).<br><small class="text-muted">*eSIM availability depends on country/region and carrier.</small></p>
-                  <p class="mb-2"><strong>Network support:</strong> Extensive GSM, WCDMA, LTE FDD/TDD, and 5G SA/NSA bands (n1/n2/n3/n5/n7/n8/n12/n20/n25/n26/n28/n38/n40/n41/n48/n66/n71/n75/n77/n78 and more).</p>
-                  <p class="mb-2"><strong>Wireless:</strong> Wi‑Fi 7 capability (regional availability), Wi‑Fi 6E/6 fallback, 2x2 MIMO, Wi-Fi Direct, Bluetooth 6.0 dual connectivity.</p>
-                  <p class="mb-0"><strong>Navigation:</strong> GPS L1+L5, Galileo E1/E5a/E5b, GLONASS G1, Beidou, QZSS L1+L5, NavIC L5, assisted GPS, electronic compass, wireless & data network positioning.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="specSevenHeading">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#specSeven" aria-expanded="false" aria-controls="specSeven">
-                  Audio, Sensors & Durability
-                </button>
-              </h2>
-              <div id="specSeven" class="accordion-collapse collapse" aria-labelledby="specSevenHeading" data-bs-parent="#specAccordion">
-                <div class="accordion-body">
-                  <p class="mb-2"><strong>Audio:</strong> Dual speakers, 3-mic array, Dolby Atmos®, Hi-Res & Hi-Res Wireless certification.</p>
-                  <p class="mb-2">Supports major audio (MP3, FLAC, AAC, OGG, WAV, AMR) and video (MP4, MKV, WEBM, 3GP) formats with HDR playback for HDR10 / HDR10+ / Dolby Vision® content.</p>
-                  <p class="mb-2"><strong>Resistance:</strong> IP68 dust and water resistance.<br><small class="text-muted">*Tested for submersion in fresh water up to 3 m for 30 minutes under controlled conditions. Not advised for beach/pool use. Avoid charging or operating buttons when wet.</small></p>
-                  <p class="mb-0"><strong>Sensors:</strong> Proximity, Ambient light, Accelerometer, Gyroscope, Electronic compass, IR blaster, Flicker sensor, X-axis linear vibration motor, Color temperature sensor.</p>
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="specEightHeading">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#specEight" aria-expanded="false" aria-controls="specEight">
-                  Package Contents
-                </button>
-              </h2>
-              <div id="specEight" class="accordion-collapse collapse" aria-labelledby="specEightHeading" data-bs-parent="#specAccordion">
-                <div class="accordion-body">
-                  <p class="mb-0">Mobile phone, USB Type-C cable, power adapter, SIM eject tool, protective case, safety information, quick start guide, warranty card, desiccant.<br><small class="text-muted">*Contents may differ by region.</small></p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="gallery" class="section">
-        <div class="container">
-          <div class="section-heading">
-            <span class="eyebrow">Gallery</span>
-            <h2>Design that stands out in every light</h2>
-            <div class="accent-line"></div>
-          </div>
-          <div class="row g-4 gallery">
-            <div class="col-md-4">
-              <figure tabindex="0">
-                <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=2b7d3b9c8c2b6d4a6e2" class="img-fluid" alt="precision machining close up of Xiaomi 15T Pro" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-bs-img="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=2b7d3b9c8c2b6d4a6e2" loading="lazy">
-                <figcaption class="gallery-caption">Precision machining</figcaption>
-              </figure>
-            </div>
-            <div class="col-md-4">
-              <figure tabindex="0">
-                <img src="https://images.unsplash.com/photo-1526178617663-4c3b2b5f0c06?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=5b6c9d7e8f4a3b2c1d0" class="img-fluid" alt="Leica Summilux optics close up" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-bs-img="https://images.unsplash.com/photo-1526178617663-4c3b2b5f0c06?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=5b6c9d7e8f4a3b2c1d0" loading="lazy">
-                <figcaption class="gallery-caption">Leica Summilux optics</figcaption>
-              </figure>
-            </div>
-            <div class="col-md-4">
-              <figure tabindex="0">
-                <img src="https://images.unsplash.com/photo-1510557880182-3d4d3e6a0f7b?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=8f1c3b9a0b6d2e8f7a6" class="img-fluid" alt="premium material and finish of Xiaomi 15T Pro" data-bs-toggle="modal" data-bs-target="#lightboxModal" data-bs-img="https://images.unsplash.com/photo-1510557880182-3d4d3e6a0f7b?q=80&w=1600&auto=format&fit=crop&ixlib=rb-4.0.3&s=8f1c3b9a0b6d2e8f7a6" loading="lazy">
-                <figcaption class="gallery-caption">Premium material palette</figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Lightbox Modal -->
-      <div class="modal fade" id="lightboxModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-xl">
-          <div class="modal-content bg-transparent border-0">
-            <div class="modal-body p-0">
-              <button type="button" class="btn-close btn-close-white position-absolute m-3" data-bs-dismiss="modal" aria-label="Close"></button>
-              <img src="" id="lightboxImage" class="w-100 rounded" alt="preview">
-            </div>
+          <div class="col-lg-6">
+            <img class="img-fluid rounded-5"
+              src="https://i02.appmifile.com/mi-com-product/fly-birds/xiaomi-15t-pro/pc/pc3_eye_0911.jpg?f=webp"
+              alt="Xiaomi 15T Pro display eye protection" loading="lazy">
           </div>
         </div>
       </div>
+    </section>
 
-      
-    </main>
-
-    
-
-    <footer class="text-center py-4 mt-5">
+    <section id="performance" class="section">
       <div class="container">
-        <small>&copy; 2025 Xiaomi — Demo product page. Images are placeholders.</small>
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-5">
+            <span class="eyebrow">Power & Cooling</span>
+            <h2 class="fw-bold mb-3">Dimensity 9400+ with Xiaomi 3D IceLoop cooling</h2>
+            <p class="section-lead mb-4">Flagship CPU and GPU cores pair with advanced thermal architecture, keeping
+              frame rates stable and AI features responsive.</p>
+            <ul class="checklist mb-0">
+              <li><span class="check-icon"><i class="bi bi-check2"></i></span><span>CPU: Cortex-X9 prime at 3.73GHz ·
+                  triple Cortex-X4 cluster</span></li>
+              <li><span class="check-icon"><i class="bi bi-check2"></i></span><span>Immortalis-G925 graphics with
+                  hardware ray tracing and Vulkan optimizations</span></li>
+              <li><span class="check-icon"><i class="bi bi-check2"></i></span><span>NPU 890 delivering on-device AI
+                  acceleration for imaging and creativity</span></li>
+            </ul>
+          </div>
+          <div class="col-lg-7">
+            <div class="row g-4">
+              <div class="col-md-6">
+                <div class="feature-item h-100">
+                  <div class="feature-tags mb-3"><span>LPDDR5X</span><span>UFS 4.1</span></div>
+                  <h4>Pro-grade memory</h4>
+                  <p class="mb-0">12 GB RAM plus up to 512 GB storage keeps large projects and games flowing without
+                    compromise.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="feature-item h-100">
+                  <div class="feature-tags mb-3"><span>Game Turbo</span><span>AI Frame</span></div>
+                  <h4>Gaming intelligence</h4>
+                  <p class="mb-0">AI frame interpolation, priority scheduling, and haptic tuning maintain buttery smooth
+                    gameplay.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="feature-item h-100">
+                  <div class="feature-tags mb-3"><span>3D IceLoop</span><span>VC Chamber</span></div>
+                  <h4>Thermal mastery</h4>
+                  <p class="mb-0">Independent vapor chambers for SoC and battery sustain turbo performance during long
+                    sessions.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="feature-item h-100">
+                  <div class="feature-tags mb-3"><span>Wi-Fi 7</span><span>5G SA/NSA</span></div>
+                  <h4>Next-gen connectivity</h4>
+                  <p class="mb-0">Dual connectivity, low latency, and global bands keep cloud workflows responsive
+                    everywhere.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </footer>
+    </section>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // Lightbox modal for gallery images
-      document.querySelectorAll('.gallery img[data-bs-img]').forEach(img => {
-        img.addEventListener('click', e => {
-          const src = e.currentTarget.getAttribute('data-bs-img');
-          const alt = e.currentTarget.getAttribute('alt') || '';
-          const lightbox = document.getElementById('lightboxImage');
-          lightbox.src = src;
-          lightbox.alt = alt + ' — preview';
-        });
-      });
+    <section id="battery" class="section">
+      <div class="container section-dark">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-6">
+            <img class="img-fluid rounded-4"
+              src="https://i02.appmifile.com/mi-com-product/fly-birds/xiaomi-15t-pro/pc/2e720fabf95c561ee865dc9e25aaa6f5.png?f=webp"
+              alt="Xiaomi Surge battery and HyperCharge" loading="lazy">
+          </div>
+          <div class="col-lg-6 ps-lg-5">
+            <span class="eyebrow">Battery & Charging</span>
+            <h2 class="fw-bold mb-3">All-day endurance with intelligent Surge battery system</h2>
+            <p class="section-lead mb-4">The 5500mAh cell optimizes cycle life, while Surge protection keeps charging
+              cool and efficient.</p>
+            <ul class="checklist checklist-dark mb-4">
+              <li><span class="check-icon"><i class="bi bi-check2"></i></span><span>90W HyperCharge wired power (0–100%
+                  in as little as 19 minutes)</span></li>
+              <li><span class="check-icon"><i class="bi bi-check2"></i></span><span>50W wireless HyperCharge plus
+                  reverse wireless support</span></li>
+              <li><span class="check-icon"><i class="bi bi-check2"></i></span><span>USB-C PD3.0 compatibility and
+                  adaptive thermal management</span></li>
+            </ul>
+            <div class="stat-grid">
+              <div class="stat-card">
+                <strong class="fs-4">+13%</strong>
+                <span>Battery longevity</span>
+                <p class="mb-0">Compared with previous Surge flagship</p>
+              </div>
+              <div class="stat-card">
+                <strong class="fs-4">30 mins</strong>
+                <span>Quick top-up</span>
+                <p class="mb-0">Enough for a full day of AI workflows</p>
+              </div>
+              <div class="stat-card">
+                <strong class="fs-4">Adaptive</strong>
+                <span>Charge scheduling</span>
+                <p class="mb-0">Surge intelligence learns routines over time</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-      // Make gallery figures keyboard-activatable (Enter / Space)
-      document.querySelectorAll('.gallery figure[tabindex]').forEach(fig => {
-        fig.addEventListener('keydown', e => {
-          if(e.key === 'Enter' || e.key === ' ' || e.code === 'Space'){
-            e.preventDefault();
-            const img = fig.querySelector('img[data-bs-img]');
-            if(img){ img.click(); }
-          }
-        });
-      });
+    <section id="software" class="section">
+      <div class="container">
+        <div class="row align-items-center gy-4">
+          <div class="col-lg-6">
+            <span class="eyebrow">HyperOS 2</span>
+            <h2 class="fw-bold mb-3">AI-first experience with HyperOS 2 and Google integration</h2>
+            <p class="section-lead mb-4">HyperOS 2 blends Xiaomi HyperAI with Google services so inspiration can flow
+              from capture to edit to sharing.</p>
+            <div class="feature-grid">
+              <div class="feature-item">
+                <h4>Xiaomi HyperAI</h4>
+                <p>AI Writing, Interpreter, and Creativity Assistant keep productivity fluid on-device.</p>
+              </div>
+              <div class="feature-item">
+                <h4>Circle to Search</h4>
+                <p>Instant multi-modal lookups powered by Google Gemini with on-screen context.</p>
+              </div>
+              <div class="feature-item">
+                <h4>Security</h4>
+                <p>Enhanced privacy dashboard, passkeys, and monthly security patches protect your data.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <img class="img-fluid rounded-4"
+              src="https://i02.appmifile.com/448_operator_sg/27/08/2025/b4d6026a1c608a0546b62c25ddaf5b87.png?f=webp"
+              alt="Dimensity 9400+ chipset graphic" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
 
-      // Smooth scroll for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(a => {
-        a.addEventListener('click', function(e){
-          const target = document.querySelector(this.getAttribute('href'));
-          if(target){
-            e.preventDefault();
-            target.scrollIntoView({behavior:'smooth', block:'start'});
-            history.replaceState(null, '', this.getAttribute('href'));
-          }
-        });
+    <section id="specs" class="section">
+      <div class="container specs-section">
+        <div class="section-heading text-center">
+          <span class="eyebrow">Specifications</span>
+          <h2>All the numbers that matter</h2>
+          <p class="section-lead mx-auto">Dive into hardware details across performance, imaging, connectivity, and
+            more. Availability may differ by region.</p>
+        </div>
+        <div class="accordion" id="specAccordion">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="performanceHeading">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#performanceSpecs" aria-expanded="true" aria-controls="#performanceSpecs">Performance
+                &amp; Storage</button>
+            </h2>
+            <div id="performanceSpecs" class="accordion-collapse collapse show" aria-labelledby="performanceHeading"
+              data-bs-parent="#specAccordion">
+              <div class="accordion-body">
+                <p><strong>Memory options:</strong> 12 GB + 256 GB · 12 GB + 512 GB</p>
+                <p>RAM: LPDDR5X · Storage: UFS 4.1<br><small>*Available capacity is less due to system software.</small>
+                </p>
+                <p><strong>SoC:</strong> MediaTek Dimensity 9400+ (3nm)</p>
+                <ul>
+                  <li>CPU: 1× Cortex-X9 3.73GHz · 3× Cortex-X4 3.3GHz · 4× Cortex-A720 2.4GHz</li>
+                  <li>GPU: Immortalis-G925 MC12</li>
+                  <li>NPU: 890 neural processing unit</li>
+                </ul>
+                <p class="mb-0"><strong>Cooling:</strong> Xiaomi 3D IceLoop system for sustained performance.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="displayHeading">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#displaySpecs" aria-expanded="false" aria-controls="#displaySpecs">Dimensions &amp;
+                Display</button>
+            </h2>
+            <div id="displaySpecs" class="accordion-collapse collapse" aria-labelledby="displayHeading"
+              data-bs-parent="#specAccordion">
+              <div class="accordion-body">
+                <p><strong>Dimensions:</strong> 162.7 × 77.9 × 7.96 mm · 210 g<br><small>*Measurements may vary between
+                    configurations.</small></p>
+                <p><strong>Display:</strong> 6.83" flat AMOLED · 2772 × 1280 · 447 ppi</p>
+                <ul>
+                  <li>Refresh up to 144Hz · touch sampling up to 2560Hz (Game Turbo)</li>
+                  <li>3200 nit peak brightness (25% APL)</li>
+                  <li>Corning® Gorilla® Glass 7i · 68 billion colors · DCI-P3 gamut</li>
+                  <li>HDR10+, Dolby Vision®, Pro HDR, Original color PRO, Wet touch</li>
+                  <li>TÜV Rheinland Low Blue Light, Flicker Free, Circadian Friendly</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="cameraHeading">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#cameraSpecs" aria-expanded="false" aria-controls="#cameraSpecs">Imaging System</button>
+            </h2>
+            <div id="cameraSpecs" class="accordion-collapse collapse" aria-labelledby="cameraHeading"
+              data-bs-parent="#specAccordion">
+              <div class="accordion-body">
+                <p><strong>Rear cameras (Leica Summilux):</strong></p>
+                <ul>
+                  <li>50MP main · Light Fusion 900 · f/1.62 · OIS</li>
+                  <li>50MP 115mm super telephoto · f/3.0 · OIS · up to 100× zoom</li>
+                  <li>12MP ultra-wide · 15mm · f/2.2 · 120° field of view</li>
+                  <li>Leica photographic styles, master-lens presets, cinematic LUT support</li>
+                  <li>Video: 8K30, 4K120/60/30, HDR10+, Dolby Vision, slow motion up to 960fps</li>
+                </ul>
+                <p class="mb-0"><strong>Front camera:</strong> 32MP in-display · f/2.2 · 21mm equivalent · 4K30 video
+                  with HDR10+ selfie recording.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="batteryHeading">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#batterySpecs" aria-expanded="false" aria-controls="#batterySpecs">Battery &amp;
+                Charging</button>
+            </h2>
+            <div id="batterySpecs" class="accordion-collapse collapse" aria-labelledby="batteryHeading"
+              data-bs-parent="#specAccordion">
+              <div class="accordion-body">
+                <p><strong>Battery:</strong> 5500mAh (typ) Xiaomi Surge battery.</p>
+                <ul>
+                  <li>90W HyperCharge wired (Xiaomi 90W adapter recommended)</li>
+                  <li>50W wireless HyperCharge · reverse wireless charging support</li>
+                  <li>USB-C PD3.0/PD2.0 compatibility<br><small>*Use digital accessories for best results.</small></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="softwareHeading">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#softwareSpecs" aria-expanded="false" aria-controls="#softwareSpecs">Intelligence &amp;
+                Software</button>
+            </h2>
+            <div id="softwareSpecs" class="accordion-collapse collapse" aria-labelledby="softwareHeading"
+              data-bs-parent="#specAccordion">
+              <div class="accordion-body">
+                <p><strong>Operating system:</strong> Xiaomi HyperOS 2.</p>
+                <p><strong>HyperAI suite:</strong> AI Writing, Interpreter, Speech Recognition, Search, Dynamic
+                  Wallpapers, Creativity Assistant.<br><small>*Feature availability varies by region and
+                    language.</small></p>
+                <p class="mb-0">Circle to Search with Google and Gemini integration for AI experiences.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="connectHeading">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#connectSpecs" aria-expanded="false" aria-controls="#connectSpecs">Connectivity &amp;
+                Positioning</button>
+            </h2>
+            <div id="connectSpecs" class="accordion-collapse collapse" aria-labelledby="connectHeading"
+              data-bs-parent="#specAccordion">
+              <div class="accordion-body">
+                <p><strong>SIM:</strong> Dual SIM (nano + nano / nano + eSIM / eSIM + eSIM).<br><small>*eSIM support
+                    depends on carriers and region.</small></p>
+                <p><strong>Networks:</strong> GSM, WCDMA, LTE FDD/TDD, 5G SA/NSA
+                  (n1/n2/n3/n5/n7/n8/n12/n20/n25/n26/n28/n38/n40/n41/n48/n66/n71/n75/n77/n78 and more).</p>
+                <p><strong>Wireless:</strong> Wi‑Fi 7 ready, Wi‑Fi 6E/6 fallback, 2×2 MIMO, Wi-Fi Direct, Bluetooth 6.0
+                  dual connectivity.</p>
+                <p class="mb-0"><strong>Positioning:</strong> GPS L1+L5, Galileo E1/E5, GLONASS, Beidou, QZSS, NavIC L5,
+                  assisted GPS, electronic compass.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="audioHeading">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#audioSpecs" aria-expanded="false" aria-controls="#audioSpecs">Audio, Sensors &amp;
+                Durability</button>
+            </h2>
+            <div id="audioSpecs" class="accordion-collapse collapse" aria-labelledby="audioHeading"
+              data-bs-parent="#specAccordion">
+              <div class="accordion-body">
+                <p><strong>Audio:</strong> Dual speakers, Dolby Atmos®, Hi-Res &amp; Hi-Res Wireless certification.</p>
+                <p>Format support: MP3, FLAC, AAC, OGG, WAV, AMR, MP4, MKV, WEBM, 3GP with HDR playback
+                  (HDR10/HDR10+/Dolby Vision®).</p>
+                <p><strong>Durability:</strong> IP68 dust and water resistance (tested up to 3 m for 30
+                  minutes).<br><small>*Avoid charging while wet. Not recommended for pool or beach use.</small></p>
+                <p class="mb-0"><strong>Sensors:</strong> Proximity, Ambient light, Accelerometer, Gyroscope, Electronic
+                  compass, IR blaster, Flicker sensor, X-axis linear vibration motor, Color temperature sensor.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="packageHeading">
+              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#packageSpecs" aria-expanded="false" aria-controls="#packageSpecs">Package
+                Contents</button>
+            </h2>
+            <div id="packageSpecs" class="accordion-collapse collapse" aria-labelledby="packageHeading"
+              data-bs-parent="#specAccordion">
+              <div class="accordion-body">
+                <p class="mb-0">Handset, USB Type-C cable, power adapter, SIM eject tool, protective case, safety
+                  information, quick start guide, warranty card, desiccant.<br><small>*Contents may vary by
+                    market.</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cta" class="section">
+      <div class="container">
+        <div class="cta-section text-center">
+          <h2 class="fw-bold mb-3">Ready to experience Xiaomi 15T Pro?</h2>
+          <p class="section-lead mx-auto mb-4">Compare colourways, review
+            regional availability, or locate a Xiaomi store near you to explore the flagship up close.</p>
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a class="btn btn-primary cta-btn" href="https://www.mi.com/ph/product/xiaomi-15t-pro/" target="_blank"
+              rel="noopener">Visit official page</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="text-center py-4 mt-5">
+    <div class="container">
+      <small>&copy; 2025 Xiaomi — Demo showcase. Product imagery courtesy of Xiaomi.</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Smooth scroll for on-page anchors.
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', event => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target) {
+          event.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          history.replaceState(null, '', anchor.getAttribute('href'));
+        }
       });
-    </script>
-  </body>
+    });
+  </script>
+</body>
+
 </html>
