@@ -937,15 +937,17 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Smooth scroll for on-page anchors.
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', event => {
-        const target = document.querySelector(anchor.getAttribute('href'));
-        if (target) {
-          event.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          history.replaceState(null, '', anchor.getAttribute('href'));
+    const inPageLinks = document.querySelectorAll('a[href^="#"]');
+    inPageLinks.forEach(link => {
+      link.addEventListener('click', event => {
+        const targetId = link.getAttribute('href');
+        const target = document.querySelector(targetId);
+        if (!target) {
+          return;
         }
+        event.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        history.replaceState(null, '', targetId);
       });
     });
   </script>
